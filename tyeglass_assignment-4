@@ -1,0 +1,12 @@
+student_name = 'Tye Glass'
+current_gpa = 3.2
+study_hours = 5
+social_points = 100
+stress_level = 99
+
+print(f'Welcome {student_name}!!!!')
+print('=== starting stats ===')
+print(f'Current GPA: {current_gpa}')
+print(f'Study hours: {study_hours}')
+print(f'Social points: {social_points}')
+print(f'Stress level: {stress_level}')

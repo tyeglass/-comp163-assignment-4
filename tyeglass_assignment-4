@@ -11,33 +11,36 @@ print(f'Study hours: {study_hours}')
 print(f'Social points: {social_points}')
 print(f'Stress level: {stress_level}')
 
-course_load = ['Light', 'Standard', 'Heavy']
-print('Choose your course load:')
+course_load = ['Light', 'Standard', 'Heavy'] #This is the list of course load options
+
+print('Choose your course load:') #Display course load choices to the user
 print('A) Light (12 credits)')
 print('B) Standard (15 credits)')
 print('C) Heavy (18 credits)')
-choice = input('Your choice: ')
-if choice == 'A' or 'a': #using or to say they can input a uppercase or lowercase to reduce confusion
-    #also using == because were not assigning we are saying "if its equal to"
-    if current_gpa >= 3.5:
+choice = input('Your choice: ') #Get user input for course load
+if choice == 'A': 
+    if current_gpa >= 3.5: #Use comparison operators to check GPA and adjust variables
         study_hours = 8
         stress_level = 30
-    else: #nested if statement to give range to study hours and stress 
+    else: #This is the lower GPA adjustment
         study_hours = 10
         stress_level = 40
-elif choice == 'B' or 'b':
+elif choice == 'B': # Different logic path
     if current_gpa >= 3.5:
         study_hours = 12
         stress_level = 50
     else:
         study_hours = 14
         stress_level = 60
-elif choice == 'C' or 'c': 
+elif choice == 'C':
     if current_gpa >= 3.5:
         study_hours = 14
         stress_level = 60
     else:
         study_hours = 16
         stress_level = 80
-else:
-    print('Invalid choice please choose A B or C') #if its anything other than ABC then it results in invalid
+else: # Handle invalid input
+    print('Invalid choice please choose A B or C')
+#Display the final study hours and stress level
+print(f'study hours: {study_hours}')
+print(f' stress level: {stress_level}')

@@ -11,21 +11,20 @@ print(f'Study hours: {study_hours}')
 print(f'Social points: {social_points}')
 print(f'Stress level: {stress_level}')
 
-course_load = ['Light', 'Standard', 'Heavy'] #This is the list of course load options
-
-print('Choose your course load:') #Display course load choices to the user
+course_load = ['Light', 'Standard', 'Heavy']
+print('Choose your course load:')
 print('A) Light (12 credits)')
 print('B) Standard (15 credits)')
 print('C) Heavy (18 credits)')
-choice = input('Your choice: ') #Get user input for course load
-if choice == 'A': 
-    if current_gpa >= 3.5: #Use comparison operators to check GPA and adjust variables
+choice = input('Your choice: ')
+if choice == 'A':
+    if current_gpa >= 3.5:
         study_hours = 8
         stress_level = 30
-    else: #This is the lower GPA adjustment
+    else:
         study_hours = 10
         stress_level = 40
-elif choice == 'B': # Different logic path
+elif choice == 'B':
     if current_gpa >= 3.5:
         study_hours = 12
         stress_level = 50
@@ -39,8 +38,32 @@ elif choice == 'C':
     else:
         study_hours = 16
         stress_level = 80
-else: # Handle invalid input
+else:
     print('Invalid choice please choose A B or C')
-#Display the final study hours and stress level
-print(f'study hours: {study_hours}')
-print(f' stress level: {stress_level}')
+
+study_options = ["Programming", "Math", "English", "History"]
+print("\nChoose a study option from:", study_options)
+study_choice = input("Your study choice: ")
+
+# this is going to validate with membership operator
+if study_choice in study_options:
+
+    if study_choice == "Programming" and current_gpa >= 3.5:
+        print("You can handle all the cool advanced coding challenges!")
+        study_hours += 4
+        stress_level += 10
+    elif study_choice == "Math" or study_choice == "English":
+        print("Strong choice bro bro these subjects build good skillz.")
+        study_hours += 2
+        stress_level += 5
+    elif (study_choice,) is not ("History",):
+        print("This subject will push you but can help you grow too.")
+        study_hours += 3
+        stress_level += 8
+    else:
+        print("History can be a relaxing balance to your workload.")
+        study_hours -= 2
+        stress_level -= 10
+if study_choice not in study_options:
+    print("Invalid study option. Please choose from the list.")
+
